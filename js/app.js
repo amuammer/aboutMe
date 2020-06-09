@@ -8,7 +8,7 @@ while (!username){
 }
 
 
-const questionsNo = 5;
+const questionsNo = 7;
 let points = 0;
 let myName;
 while (myName !== "y" && myName !== "n"){
@@ -81,6 +81,50 @@ while (myProgrammingLanguage !== "y" && myProgrammingLanguage !== "n"){
     document.getElementById("myProgrammingLanguage").classList.add("failled");
   }
 }
+alert(`your score ${points} / ${questionsNo}`);
+
+
+const number =  Math.floor(Math.random()*10);
+console.log(number);
+let success = false;
+for (var i = 0; i < 4; i++) {
+  const input = prompt("guess the random number ? (1, 10)");
+  if (input < number){
+    alert("too low");
+  } else if (input > number){
+    alert("too High");
+  } else {
+    alert("success");
+    success = true;
+    points++;
+    break;
+  }
+}
+// if not guessed
+if (!success){
+  alert("the number is "+ number);
+}
+
+alert(`your score ${points} / ${questionsNo}`);
+
+
+const colors =  ["green", "blue", "white"];
+for (var i = 0; i < 6; i++) {
+  const input = prompt("guess a favorite color ?");
+  let includes = false;
+  for (var j = 0; j < colors.length; j++) {
+      if (colors[j] === input){
+        includes = true;
+      }
+  }
+  if (includes){
+    alert("success");
+    points++;
+    break;
+  }
+}
+alert("the correct Answers "+ colors);
+
 alert(`your score ${points} / ${questionsNo}`);
 
 document.getElementById("questions").hidden=false;
